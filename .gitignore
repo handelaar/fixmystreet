@@ -4,6 +4,8 @@
 ._*
 .DS_Store
 .carton
+htpasswd
+.htpasswd
 local-lib5
 META.yml
 Makefile
