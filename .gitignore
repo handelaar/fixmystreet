@@ -24,3 +24,4 @@ htpasswd
 blog/web/wp
 blog/conf/general
 blog/conf/general.deployed
+log/
