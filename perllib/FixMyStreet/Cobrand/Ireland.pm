@@ -1,4 +1,4 @@
-package FixMyStreet::Cobrand::FiksGataMi;
+package FixMyStreet::Cobrand::Ireland;
 use base 'FixMyStreet::Cobrand::Default';
 
 use strict;
@@ -6,7 +6,6 @@ use warnings;
 
 use Carp;
 use mySociety::MaPit;
-use FixMyStreet::Geocode::OSM;
 
 sub country {
     return 'IE';
@@ -15,12 +14,27 @@ sub country {
 sub set_lang_and_domain {
     my ( $self, $lang, $unicode, $dir ) = @_;
     my $set_lang = mySociety::Locale::negotiate_language(
-        'en-gb,English,en_GB|en-ie,English,en_IE|', 'en-ie'
+        'en-gb,English,en_GB', 'en-gb'
     );
-    mySociety::Locale::gettext_domain( 'Ireland', $unicode, $dir );
+    mySociety::Locale::gettext_domain( 'FixMyStreet', $unicode, $dir );
     mySociety::Locale::change();
     return $set_lang;
 }
+
+sub short_name {
+  my $self = shift;
+  my ($area, $info) = @_;
+  my $name = $area->{name};
+  $name =~ s/ County Council$//;
+  $name =~ s/ Council$//;
+  $name =~ s/ & / and /;
+  $name =~ s{/}{_}g;
+  $name = URI::Escape::uri_escape_utf8($name);
+  $name =~ s/%20/+/g;
+  return $name;
+
+}
+
 
 sub site_title {
     my ($self) = @_;
@@ -63,35 +77,10 @@ sub uri {
     return $uri;
 }
 
-sub geocode_postcode {
-    my ( $self, $s ) = @_;
-
-    if ($s =~ /^\d{4}$/) {
-        my $location = mySociety::MaPit::call('postcode', $s);
-        if ($location->{error}) {
-            return {
-                error => $location->{code} =~ /^4/
-                    ? _('That postcode was not recognised, sorry.')
-                    : $location->{error}
-            };
-        }
-        return {
-            latitude  => $location->{wgs84_lat},
-            longitude => $location->{wgs84_lon},
-        };
-    }
-    return {};
-}
-
 sub geocoded_string_check {
     my ( $self, $s ) = @_;
     return 1 if $s =~ /, Ireland/;
     return 0;
-}
-
-sub find_closest {
-    my ( $self, $latitude, $longitude ) = @_;
-    return FixMyStreet::Geocode::OSM::closest_road_text( $self, $latitude, $longitude );
 }
 
 

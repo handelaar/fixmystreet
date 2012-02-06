@@ -20,7 +20,7 @@ tags
 /web/css/main.css
 /web/cobrands/fixmystreet/*.css
 /local
-
+htpasswd
 blog/web/wp
 blog/conf/general
 blog/conf/general.deployed
