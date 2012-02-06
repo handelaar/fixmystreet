@@ -1,4 +1,4 @@
-package FixMyStreet::Cobrand::Ireland;
+package FixMyStreet::Cobrand::FiksGataMi;
 use base 'FixMyStreet::Cobrand::Default';
 
 use strict;
@@ -17,7 +17,7 @@ sub set_lang_and_domain {
     my $set_lang = mySociety::Locale::negotiate_language(
         'en-gb,English,en_GB|en-ie,English,en_IE|', 'en-ie'
     );
-    mySociety::Locale::gettext_domain( 'FixMyStreet', $unicode, $dir );
+    mySociety::Locale::gettext_domain( 'Ireland', $unicode, $dir );
     mySociety::Locale::change();
     return $set_lang;
 }

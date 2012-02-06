@@ -1,0 +1,278 @@
+./commonlib/perllib/mySociety/t/HandleMail.t .. 
+Failed 310/311 subtests 
+./t/00-check-config.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/00-check-we-are-staging.t ................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/01app.t ............................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/02pod.t ............................... skipped: set TEST_POD to enable this test
+./t/app/03podcoverage.t ....................... skipped: set TEST_POD to enable this test
+./t/app/controller/about.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/admin.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/alert.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/alert_new.t ................ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/around.t ................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/auth.t ..................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/contact.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/council.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/index.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/json.t ..................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/my.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+Failed 11/11 subtests 
+./t/app/controller/open311.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/page_not_found.t ........... 
+Dubious, test returned 2 (wstat 512, 0x200)
+Failed 4/4 subtests 
+./t/app/controller/questionnaire.t ............ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/report_display.t ........... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/report_import.t ............ 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/report_new.t ............... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/report_new_open311.t ....... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/report_updates.t ........... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/reports.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/controller/rss.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/helpers/send_email.t .................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/load_general_config.t ................. 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 2/2 subtests 
+./t/app/model/alert_type.t .................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/model/comment.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+Failed 2/2 subtests 
+./t/app/model/db.t ............................ 
+Dubious, test returned 1 (wstat 256, 0x100)
+Failed 1/1 subtests 
+./t/app/model/problem.t ....................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/model/questionnaire.t ................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/model/token.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+Failed 45/45 subtests 
+./t/app/uri_for.t ............................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/app/view/email.t .......................... 
+Dubious, test returned 1 (wstat 256, 0x100)
+Failed 1/1 subtests 
+./t/app/view/web.t ............................ 
+Dubious, test returned 1 (wstat 256, 0x100)
+Failed 1/1 subtests 
+./t/cobrand/closest.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/cobrand/loading.t ......................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/fixmystreet.t ............................. 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 1/1 subtests 
+./t/i18n.t .................................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/map/tilma/original.t ...................... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/open311.t ................................. 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/open311/getupdates.t ...................... 
+Dubious, test returned 255 (wstat 65280, 0xff00)
+Failed 2/2 subtests 
+./t/open311/populate-service-list.t ........... 
+Dubious, test returned 2 (wstat 512, 0x200)
+No subtests run 
+./t/utils.t ................................... 
+Failed 9/9 subtests 
+
+Test Summary Report
+-------------------
+./commonlib/perllib/mySociety/t/HandleMail.t (Wstat: 11 Tests: 1 Failed: 0)
+  Non-zero wait status: 11
+  Parse errors: Bad plan.  You planned 311 tests but ran 1.
+./t/00-check-config.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/00-check-we-are-staging.t               (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/01app.t                             (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/about.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/admin.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/alert.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/alert_new.t              (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/around.t                 (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/auth.t                   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/contact.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/council.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/index.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/json.t                   (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/my.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: Bad plan.  You planned 11 tests but ran 0.
+./t/app/controller/open311.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/page_not_found.t         (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: Bad plan.  You planned 4 tests but ran 0.
+./t/app/controller/questionnaire.t          (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/report_display.t         (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/report_import.t          (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/report_new.t             (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/report_new_open311.t     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/report_updates.t         (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/reports.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/controller/rss.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/helpers/send_email.t                (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/load_general_config.t               (Wstat: 65280 Tests: 1 Failed: 1)
+  Failed test:  1
+  Non-zero exit status: 255
+  Parse errors: Bad plan.  You planned 2 tests but ran 1.
+./t/app/model/alert_type.t                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/model/comment.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: Bad plan.  You planned 2 tests but ran 0.
+./t/app/model/db.t                          (Wstat: 256 Tests: 1 Failed: 1)
+  Failed test:  1
+  Non-zero exit status: 1
+./t/app/model/problem.t                     (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/model/questionnaire.t               (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/model/token.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: Bad plan.  You planned 45 tests but ran 0.
+./t/app/uri_for.t                           (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/app/view/email.t                        (Wstat: 256 Tests: 1 Failed: 1)
+  Failed test:  1
+  Non-zero exit status: 1
+./t/app/view/web.t                          (Wstat: 256 Tests: 1 Failed: 1)
+  Failed test:  1
+  Non-zero exit status: 1
+./t/cobrand/closest.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/cobrand/loading.t                       (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/fixmystreet.t                           (Wstat: 65280 Tests: 1 Failed: 1)
+  Failed test:  1
+  Non-zero exit status: 255
+  Parse errors: No plan found in TAP output
+./t/i18n.t                                  (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/map/tilma/original.t                    (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/open311.t                               (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/open311/getupdates.t                    (Wstat: 65280 Tests: 2 Failed: 2)
+  Failed tests:  1-2
+  Non-zero exit status: 255
+  Parse errors: No plan found in TAP output
+./t/open311/populate-service-list.t         (Wstat: 512 Tests: 0 Failed: 0)
+  Non-zero exit status: 2
+  Parse errors: No plan found in TAP output
+./t/utils.t                                 (Wstat: 11 Tests: 0 Failed: 0)
+  Non-zero wait status: 11
+  Parse errors: Bad plan.  You planned 9 tests but ran 0.
+Files=47, Tests=8,  4 wallclock secs ( 0.20 usr  0.10 sys +  2.08 cusr  0.27 csys =  2.65 CPU)
+Result: FAIL
