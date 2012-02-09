@@ -23,7 +23,7 @@ there are no councils then return false.
 
 sub load_and_check_councils_and_wards : Private {
     my ( $self, $c ) = @_;
-    my @area_types = ( $c->cobrand->area_types(), @$mySociety::VotingArea::council_child_types );
+    my @area_types = ( $c->cobrand->area_types(), $c->cobrand->council_child_types() );
     $c->stash->{area_types} = \@area_types;
     $c->forward('load_and_check_councils');
 }

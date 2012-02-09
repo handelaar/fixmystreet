@@ -6,7 +6,6 @@ use File::Slurp;
 use List::MoreUtils qw(zip);
 use POSIX qw(strcoll);
 use mySociety::MaPit;
-use mySociety::VotingArea;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
@@ -127,7 +126,7 @@ sub ward : Path : Args(2) {
     # List of wards
     unless ($c->stash->{ward}) {
         my $children = mySociety::MaPit::call('area/children', $c->stash->{council}->{id},
-            type => $mySociety::VotingArea::council_child_types,
+            type => $c->cobrand->council_child_types,
         );
         foreach (values %$children) {
             $_->{url} = $c->uri_for( $c->stash->{council_url}
@@ -256,7 +255,6 @@ sub council_check : Private {
 This action checks the ward name from a URI exists and is part of the right
 parent, already found with council_check. It either stores the ward Area if
 okay, or redirects to the council page if bad.
-This is currently only used in the UK, hence the use of mySociety::VotingArea.
 
 =cut
 
@@ -270,7 +268,7 @@ sub ward_check : Private {
     my $council = $c->stash->{council};
 
     my $qw = mySociety::MaPit::call('areas', $ward,
-        type => $mySociety::VotingArea::council_child_types,
+        type => $c->cobrand->council_child_types,
         min_generation => $c->cobrand->area_min_generation
     );
     foreach my $area (sort { $a->{name} cmp $b->{name} } values %$qw) {
