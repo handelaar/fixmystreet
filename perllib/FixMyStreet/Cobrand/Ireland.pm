@@ -35,6 +35,13 @@ sub short_name {
 
 }
 
+sub council_child_types { 
+        return qw(ICC ITC);
+}
+
+sub council_parent_types { 
+        return qw(ICO ITO);
+}
 
 sub site_title {
     my ($self) = @_;
