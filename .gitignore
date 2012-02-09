@@ -4,8 +4,6 @@
 ._*
 .DS_Store
 .carton
-htpasswd
-.htpasswd
 local-lib5
 META.yml
 Makefile
@@ -22,8 +20,7 @@ tags
 /web/css/main.css
 /web/cobrands/fixmystreet/*.css
 /local
-htpasswd
+
 blog/web/wp
 blog/conf/general
 blog/conf/general.deployed
-log/
