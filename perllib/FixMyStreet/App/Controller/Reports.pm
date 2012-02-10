@@ -30,8 +30,6 @@ Show the summary page of all reports.
 sub index : Path : Args(0) {
     my ( $self, $c ) = @_;
 
-    $c->response->header('Cache-Control' => 'max-age=3600');
-
     # Fetch all areas of the types we're interested in
     my $areas_info;
     eval {
@@ -72,6 +70,9 @@ sub index : Path : Args(0) {
             sprintf(_('The error was: %s'), $@);
         $c->stash->{template} = 'errors/generic.html';
     }
+
+    # Down here so that error pages aren't cached.
+    $c->response->header('Cache-Control' => 'max-age=3600');
 }
 
 =head2 index
