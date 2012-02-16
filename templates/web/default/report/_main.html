@@ -1,3 +1,5 @@
+[% shorturl = "http://fixmy.st/I" _ c.cobrand.shorturl (problem.id) %]
+
 <h1>[% problem.title | html %]</h1>
 
 <p><em>[% problem.meta_line(c) | html %]
@@ -15,4 +17,4 @@
 
 [% INCLUDE 'report/photo.html' object=problem center=1 %]
 
-
+<p><a href="http://twitter.com/?status=[% 'FixMyStreet: ' _ problem.title | html %] [% shorturl | url %]">Tweet this</a></p>

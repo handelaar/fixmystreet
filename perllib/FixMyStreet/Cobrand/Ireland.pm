@@ -6,9 +6,20 @@ use warnings;
 
 use Carp;
 use mySociety::MaPit;
+use Math::BaseCalc;
+
 
 sub country {
     return 'IE';
+}
+
+sub shorturl {
+    my $self = shift;
+    my ($id) = @_;
+    my $base10 = new Math::BaseCalc(digits=>[0..9]);
+    my $base62 = new Math::BaseCalc(digits=>['A'..'Z',0..9,'a'..'z']);
+    my $shorten = $base62->to_base ($id);
+    return $shorten;
 }
 
 sub set_lang_and_domain {
