@@ -17,4 +17,4 @@
 
 [% INCLUDE 'report/photo.html' object=problem center=1 %]
 
-<p><a href="http://twitter.com/?status=[% 'FixMyStreet: ' _ problem.title | html %] [% shorturl | url %]">Tweet this</a></p>
+<p><a href="http://twitter.com/?status=[% 'FixMyStreet: ' _ problem.title _ ' ' _ shorturl | url %]">Tweet this</a></p>
