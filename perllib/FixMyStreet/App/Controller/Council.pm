@@ -1,6 +1,7 @@
 package FixMyStreet::App::Controller::Council;
 use Moose;
 use namespace::autoclean;
+use Data::Dumper;
 
 BEGIN {extends 'Catalyst::Controller'; }
 
@@ -94,6 +95,7 @@ sub load_and_check_councils : Private {
 
     # all good if we have some councils left
     $c->stash->{all_councils} = $all_councils;
+    #print Dumper($all_councils);
     $c->stash->{all_council_names} =
       [ map { $_->{name} } values %$all_councils ];
     return 1;

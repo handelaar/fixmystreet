@@ -1,0 +1,114 @@
+[% IF ward %]
+    [% name = "$ward.name,<br /> $council.name"
+       thing = loc('Local Electoral Area')
+    %]
+[% ELSE %]
+    [% name = council.name
+       thing = loc('council')
+    %]
+[% END %]
+
+[%
+    PROCESS "maps/${map.type}.html";
+    INCLUDE 'header.html',
+    title = tprintf(loc('%s - Summary reports'), name)
+    context = 'reports'
+    rss = [ tprintf(loc('Problems within %s, FixMyStreet'), name), rss_url ]
+%]
+
+[% map_html %]
+
+
+[% IF children.size %]
+<h2 style="clear:right">[% loc('Local Electoral Areas of this council') %]</h2>
+<p>[% loc('Follow one of these links to view only reports within that area.') %]</p>
+<ul>
+[% FOR child IN children.values.sort('name') %]
+<li><a href="[% child.url %]">[% child.name %]</a></li>
+[% END %]
+</ul>
+[% END %]
+
+</div>
+<div id="side">
+
+<p><a href="[% rss_url %]"><img align="right" src="/i/feed.png" width="16" height="16" title="[% loc('RSS feed') %]" alt="[% tprintf(loc('RSS feed of problems in this %s'), thing) %]" border="0" hspace="4"></a>
+
+[% IF c.cobrand.all_councils_report %]
+    [% tprintf( loc('This is a summary of all reports for one %s.'), thing ) %]
+[% ELSE %]
+    [% tprintf( loc('This is a summary of all reports for this %s.'), thing ) %]
+[% END %]
+
+[% IF ward %]
+[% tprintf( loc('You can <a href="%s">view all reports for the council</a> or <a href="/reports">show all councils</a>.'), council_url ) %]
+[% ELSE %]
+[% loc('You can <a href="/reports">show all councils</a>.') %]
+[% END %]
+
+<h2>[% name %]</h2>
+
+[% IF c.cobrand.moniker == 'fixmystreet' %]
+<p class="promo">
+    FixMyStreet is now available for local council websites.
+    <a href="http://www.mysociety.org/fixmystreet-for-local-council-websites/">Find&nbsp;out&nbsp;more</a>.
+</p>
+[% END %]
+
+    [% INCLUDE 'pagination.html', param = 'p' %]
+
+    [% INCLUDE column
+        title = loc('Recently fixed')
+        problems = fixed.${council.id}.new
+    %]
+
+    [% INCLUDE column
+        title = loc('New problems')
+        problems = open.${council.id}.new
+    %]
+
+    [%# This doesn't really need a whole separate template %]
+    [% IF c.cobrand.moniker == 'emptyhomes' %]
+        [% 
+           INCLUDE column
+            title = loc('Older problems')
+            problems = open.${council.id}.older.merge( open.${council.id}.unknown )
+        %]
+    [% ELSE %]
+        [% INCLUDE column
+            title = loc('Older problems')
+            problems = open.${council.id}.older
+        %]
+        [% INCLUDE column
+            title = loc('Old problems, state unknown')
+            problems = open.${council.id}.unknown
+        %]
+    [% END %]
+
+    [% INCLUDE column
+        title = loc('Old fixed')
+        problems = fixed.${council.id}.old
+    %]
+
+</div>
+[% INCLUDE 'footer.html' %]
+
+[% BLOCK column %]
+[% IF problems %]
+
+<h3>[% title %]</h3>
+
+<ul>
+[% FOREACH problem IN problems %]
+    <li><a href="[% c.uri_for('/report/' _ problem.id) %]">[% problem.title | html %]</a>
+    [% IF problem.councils > 1 %] <small>[% loc('(sent to both)') %]</small> [% END %]
+    [% IF c.cobrand.moniker != 'emptyhomes' %]
+        [% IF problem.councils == 0 %] <small>[% loc('(not sent to council)') %]</small> [% END %]
+    [% END %]
+    </li>
+[% END %]
+</ul>
+
+[% END %]
+[% END %]
+

@@ -135,7 +135,8 @@ sub ward : Path : Args(2) {
     # List of wards
     unless ($c->stash->{ward}) {
         my $children = mySociety::MaPit::call('area/children', [ $c->stash->{council}->{id} ],
-            type => $mySociety::VotingArea::council_child_types,
+            #type => $mySociety::VotingArea::council_child_types,
+            type => $c->cobrand->area_types_children,
         );
         foreach (values %$children) {
             $_->{url} = $c->uri_for( $c->stash->{council_url}
@@ -271,7 +272,7 @@ sub ward_check : Private {
     my $council = $c->stash->{council};
 
     my $qw = mySociety::MaPit::call('areas', $ward,
-        type => $mySociety::VotingArea::council_child_types,
+        type => $c->cobrand->area_types_children,
         min_generation => $c->cobrand->area_min_generation
     );
     foreach my $area (sort { $a->{name} cmp $b->{name} } values %$qw) {

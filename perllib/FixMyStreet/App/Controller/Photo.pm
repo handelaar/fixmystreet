@@ -202,7 +202,7 @@ sub process_photo_upload : Private {
     }
 
     my $fileid = sha1_hex($photo_blob);
-    $upload->copy_to( file($cache_dir, $fileid . '.jpeg') );
+    $upload->copy_to( file($cache_dir, $fileid . '.jpeg') ) or die "Error: $!";
 
     # stick the hash on the stash, so don't have to reupload in case of error
     $c->stash->{upload_fileid} = $fileid;

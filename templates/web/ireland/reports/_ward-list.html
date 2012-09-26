@@ -1,0 +1,9 @@
+[% IF location == 'before' AND children.size %]
+<h2 style="clear:right">Local electoral areas (LEAs) within this council</h2>
+<p>[% loc('Follow a link below to view only reports within that LEA.') %]</p>
+<ul class="ward_list">
+[% FOR child IN children.values.sort('name') %]
+<li><a href="[% child.url %]">[% child.name %]</a></li>
+[% END %]
+</ul>
+[% END %]

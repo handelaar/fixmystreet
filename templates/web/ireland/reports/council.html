@@ -1,0 +1,88 @@
+[% IF c.cobrand.moniker == 'fixmystreet' OR c.cobrand.moniker == 'bromley';
+     style = 'new';
+   ELSE;
+     style = 'old';
+   END;
+%]
+[% IF ward %]
+    [% name = "$ward.name, $council.name"
+       thing = loc('ward')
+    %]
+[% ELSE %]
+    [% name = council.name
+       thing = loc('council')
+    %]
+[% END %]
+
+[% IF c.cobrand.is_council %]
+    [% ward_text = loc( 'View reports by ward' ) %]
+[% ELSE %]
+    [% ward_text = loc( 'Wards of this council' ) %]
+[% END %]
+
+[%
+    PROCESS "maps/${map.type}.html";
+    INCLUDE 'header.html',
+    title = tprintf(loc('%s - Summary reports'), name)
+    context = 'reports'
+    bodyclass = 'mappage'
+    rss = [ tprintf(loc('Problems within %s, FixMyStreet'), name), rss_url ]
+%]
+
+[% map_html %]
+
+[% INCLUDE 'reports/_ward-list.html', location = 'before' %]
+
+</div>
+<div id="side">
+
+    [% IF ward %]
+    <h1 id="reports_heading">[% ward.name %]</h1><h3>A local electoral area within <br />[% council.name %]</h3>
+    <p>You can see <a href="[% council_url %]">all reports for this council</a>, or <a href="/reports">all councils</a>.</p> 
+    [% ELSE %]
+    <h1 id="reports_heading">[% council.name %]</h1>
+    [% END %]
+</h1>
+
+
+[% INCLUDE 'reports/_rss.html' %]
+
+[% INCLUDE 'reports/_ward-list.html', location = 'after' %]
+
+[% IF c.cobrand.moniker == 'fixmystreet' %]
+<p class="promo">
+    FixMyStreet is now available for local council websites.
+    <a href="http://www.mysociety.org/for-councils/fixmystreet/">Find&nbsp;out&nbsp;more</a>.
+</p>
+[% END %]
+
+[% INCLUDE 'pagination.html', param = 'p' %]
+
+<section class="full-width">
+    [% INCLUDE column
+        problems = problems.${council.id}
+    %]
+</section>
+
+[% INCLUDE 'pagination.html', param = 'p' %]
+
+</div>
+[% INCLUDE 'footer.html' %]
+
+[% BLOCK column %]
+[% IF problems %]
+
+<h3>Known problems</h3>
+<ul class="issue-list-a">
+[% FOREACH problem IN problems %]
+    [% INCLUDE 'reports/_list-entry.html' %]
+[% END %]
+</ul>
+[% ELSE %]
+
+<p>There are no current reports in this area.</p>
+
+[% END %]
+
+[% END %]
+
