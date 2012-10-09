@@ -10,6 +10,8 @@ use Digest::MD5 qw(md5_hex);
 use Carp;
 use mySociety::MaPit;
 use mySociety::PostcodeUtil;
+use mySociety::VotingArea;
+
 
 =head1 path_to_web_templates
 
@@ -40,6 +42,28 @@ things involving eastings/northings mostly).
 sub country {
     return '';
 }
+
+=head2 council_child_types
+
+Types which are wards or electoral divisions in councils.
+
+=cut
+
+sub council_child_types { 
+        return $mySociety::VotingArea::council_child_types;
+}
+
+
+=head2 council_parent_types
+
+Types which are local councils, such as districts, counties,
+unitary authorities and boroughs.
+
+=cut
+sub council_parent_types { 
+        return $mySociety::VotingArea::council_parent_types;
+}
+
 
 =head1 problems_clause
 

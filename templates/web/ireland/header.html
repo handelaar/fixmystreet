@@ -4,8 +4,8 @@
 <!--[if IE 8]>   <html class="no-js ie8 oldie" lang="[% lang_code %]"><![endif]-->
 <!--[if gt IE 8]><!--><html class="no-js" lang="[% lang_code %]"><!--<![endif]-->
     <head>
-        <meta name="viewport" content="initial-scale=1.0">
-        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, minimum-scale=0.5, maximum-scale=3.0, user-scalable=yes, target-densitydpi=device-dpi"/>
+    	<meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
         <meta name="HandHeldFriendly" content="true">
@@ -14,18 +14,22 @@
         <!-- <link rel="stylesheet" href="[% version('/css/core.css') %]">
         <link rel="stylesheet" href="[% version('/cobrands/ireland/base.css') %]">
         <link rel="stylesheet" href="[% version('/cobrands/ireland/layout.css') %]" media="(min-width:48em)"> -->
+        <link rel="stylesheet" href="http://mygov.ie/fms/style.css" />
+        <link rel="stylesheet" href="http://mygov.ie/fms/forms.css" />
         <!-- <link rel="stylesheet" href="http://mygov.ie/fms/formalize.css" /> -->
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400bold&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://mygov.ie/fms/style.css" />
 
         <!--[if (lt IE 9) & (!IEMobile)]>
-            <link rel="stylesheet" href="[% version('/cobrands/fixmystreet/layout.css') %]">
+            <!-- <link rel="stylesheet" href="[% version('/cobrands/fixmystreet/layout.css') %]">
         <![endif]-->
 
         [% INCLUDE 'common_header_tags.html' %]
         [% INCLUDE 'tracking_code.html' %]
+        <script type="text/javascript">var switchTo5x=true;</script>
+        <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+        <script type="text/javascript">stLight.options({publisher: "d498cc90-e47c-4622-b787-00658da1da4a",onhover:false,donescreen:false,});</script>
     </head>
     <body[% IF NOT title AND NOT c.req.path %] class="front"[% END %]>
                 <div id="logocontainer">

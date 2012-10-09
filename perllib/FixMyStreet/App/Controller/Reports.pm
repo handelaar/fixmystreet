@@ -6,7 +6,6 @@ use File::Slurp;
 use List::MoreUtils qw(zip);
 use POSIX qw(strcoll);
 use mySociety::MaPit;
-use mySociety::VotingArea;
 
 BEGIN { extends 'Catalyst::Controller'; }
 
@@ -258,7 +257,6 @@ sub council_check : Private {
 This action checks the ward name from a URI exists and is part of the right
 parent, already found with council_check. It either stores the ward Area if
 okay, or redirects to the council page if bad.
-This is currently only used in the UK, hence the use of mySociety::VotingArea.
 
 =cut
 
